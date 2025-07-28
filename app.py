@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
+import os
+import urllib.request
+import tempfile
 from preprocessing import ClusterSimilarity, cluster_simil, default_num_pipeline, cat_pipeline, log_pipeline, ratio_pipeline, column_ratio, ratio_name, preprocessing
 
 # Page configuration
@@ -14,7 +17,11 @@ st.set_page_config(
 # Load trained model
 @st.cache_resource
 def load_model():
-    return joblib.load("my_california_housing_model.pkl")
+    model_path = "my_california_housing_model.pkl"
+    if not os.path.exists(model_path):
+        url = "https://drive.google.com/uc?id=1wG4g5gF9HIWH49o6Ht53HzDn1I8zyxd0"  # replace with your file ID
+        urllib.request.urlretrieve(url, model_path)
+    return joblib.load(model_path)
 
 model = load_model()
 
