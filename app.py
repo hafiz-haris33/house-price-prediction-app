@@ -15,13 +15,11 @@ st.set_page_config(
 )
 
 # Load trained model
+
+# Load trained model
 @st.cache_resource
 def load_model():
-    model_path = "model.pkl"
-    if not os.path.exists(model_path):
-        url = "https://drive.google.com/uc?id=woi-aMzbbBxYGm9IQK8nsCt_KhcmYneC"  # replace with your file ID
-        urllib.request.urlretrieve(url, model_path)
-    return joblib.load(model_path)
+    return joblib.load("model.pkl")
 
 model = load_model()
 
