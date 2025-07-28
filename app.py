@@ -2,9 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
-import os
-import urllib.request
-import tempfile
+
 from preprocessing import ClusterSimilarity, cluster_simil, default_num_pipeline, cat_pipeline, log_pipeline, ratio_pipeline, column_ratio, ratio_name, preprocessing
 
 # Page configuration
