@@ -95,11 +95,6 @@ Trained multiple models:
 
 ---
 
-## Download the model
-- You can download the model from [Drive](https://drive.google.com/file/d/1wG4g5gF9HIWH49o6Ht53HzDn1I8zyxd0/view?usp=drive_link)
-
----
-
 ## 🖥️ How to Run the App Locally
 
 ```bash
